@@ -1,3 +1,4 @@
+import ButtonDelete from "@/components/ButtonDelete";
 import FoodCard from "@/components/FoodCard";
 import FoodForm from "@/components/FoodForm";
 import BaseLayout from "@/layout/BaseLayout";
@@ -35,6 +36,7 @@ export default function FoodDetails({ food }) {
             description: food.description,
           }}
         />
+        <ButtonDelete food={food} />
       </div>
     </BaseLayout>
   );
