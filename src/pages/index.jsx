@@ -23,10 +23,12 @@ export async function getStaticProps() {
 export default function Home({ foods }) {
   return (
     <BaseLayout>
-      <div>
-        {foods.map((food) => (
-          <FoodCard key={food.id} food={food} />
-        ))}
+      <div className=" bg-[url('/img/bg.jpg')] min-h-screen bg-cover">
+        <div className="grid grid-cols-3 gap-4">
+          {foods.map((food) => (
+            <FoodCard key={food.id} food={food} />
+          ))}
+        </div>
       </div>
     </BaseLayout>
   );
