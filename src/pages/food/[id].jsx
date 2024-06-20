@@ -1,4 +1,3 @@
-import ButtonDelete from "@/components/ButtonDelete";
 import FoodCard from "@/components/FoodCard";
 import FoodForm from "@/components/FoodForm";
 import BaseLayout from "@/layout/BaseLayout";
@@ -24,20 +23,26 @@ export async function getServerSideProps(context) {
 
 export default function FoodDetails({ food }) {
   return (
-    <BaseLayout>
-      <div>
-        <FoodCard food={food} />
-        <FoodForm
-          isEdit={true}
-          defaulFormData={{
-            name: food.name,
-            imageUrl: food.imageUrl,
-            ingredients: food.ingredients,
-            description: food.description,
-          }}
-        />
-        <ButtonDelete food={food} />
-      </div>
-    </BaseLayout>
+    <div className="bg-[url('/img/bg.jpg')] min-h-screen bg-cover">
+      <BaseLayout>
+      <div className="mx-auto mb-5 w-80">
+          <marquee className="text-3xl font-bold text-center text-white">
+            Silahkan Edit atau Hapus Menu Makanan
+          </marquee>
+        </div>
+        <div className="flex justify-around gap-5">
+          <FoodCard food={food} isDetail={true} />
+          <FoodForm
+            isEdit={true}
+            defaulFormData={{
+              name: food.name,
+              imageUrl: food.imageUrl,
+              ingredients: food.ingredients,
+              description: food.description,
+            }}
+          />
+        </div>
+      </BaseLayout>
+    </div>
   );
 }

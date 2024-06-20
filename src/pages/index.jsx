@@ -22,14 +22,21 @@ export async function getStaticProps() {
 
 export default function Home({ foods }) {
   return (
-    <BaseLayout>
-      <div className=" bg-[url('/img/bg.jpg')] min-h-screen bg-cover">
-        <div className="grid grid-cols-3 gap-4">
-          {foods.map((food) => (
-            <FoodCard key={food.id} food={food} />
-          ))}
+    <div className=" bg-[url('/img/bg.jpg')] min-h-screen bg-cover">
+      <BaseLayout>
+        <div className="mx-auto mb-5 w-80">
+          <marquee className="text-3xl font-bold text-center text-white">
+            List Menu Makanan
+          </marquee>
         </div>
-      </div>
-    </BaseLayout>
+       
+          <div className="grid grid-cols-3 gap-4 ml-14">
+            {foods.map((food) => (
+              <FoodCard key={food.id} food={food} />
+            ))}
+          </div>
+        
+      </BaseLayout>
+    </div>
   );
 }

@@ -7,7 +7,7 @@ export default function ButtonDelete({ food }) {
   const handleDelete = async () => {
     const res = await axios
       .delete(
-        `https://api-bootcamp.do.dibimbing.id/api/v1/delete-food/${food.id}`,
+        `https://api-bootcamp.do.dibimbing.id/api/v1/delete-food/${router.query.id}`,
         {
           headers: {
             apiKey: "w05KkI9AWhKxzvPFtXotUva-",
@@ -28,5 +28,5 @@ export default function ButtonDelete({ food }) {
       });
   };
 
-  return <button onClick={handleDelete}>Delete</button>;
+  return <button className="px-3 py-1 text-white bg-red-500 rounded-md" onClick={handleDelete}>Delete</button>;
 }
