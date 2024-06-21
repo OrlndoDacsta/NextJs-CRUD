@@ -24,13 +24,13 @@ export default function Home({ foods }) {
   return (
     <div className=" bg-[url('/img/bg.jpg')] min-h-screen bg-cover">
       <BaseLayout>
-        <div className="mx-auto mb-5 w-80">
-          <marquee className="text-3xl font-bold text-center text-white">
+        <div className="mx-auto mb-5 w-80 max-sm:w-60">
+          <marquee className="text-3xl font-bold text-center text-white max-sm:text-xl">
             List Menu Makanan
           </marquee>
         </div>
        
-          <div className="grid grid-cols-3 gap-4 ml-14">
+          <div className="grid items-center justify-center grid-cols-3 gap-4 ml-14 max-sm:grid-cols-1">
             {foods.map((food) => (
               <FoodCard key={food.id} food={food} />
             ))}

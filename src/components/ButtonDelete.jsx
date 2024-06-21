@@ -28,5 +28,5 @@ export default function ButtonDelete({ food }) {
       });
   };
 
-  return <button className="px-3 py-1 text-white bg-red-500 rounded-md" onClick={handleDelete}>Delete</button>;
+  return <button className="px-4 py-2 font-bold text-white bg-red-500 rounded-md max-sm:text-xs hover:bg-red-700" onClick={handleDelete}>Delete</button>;
 }
